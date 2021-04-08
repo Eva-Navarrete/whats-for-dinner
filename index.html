@@ -10,18 +10,35 @@
       <button class="add-a-recipe-button">ADD A RECIPE</button>
     </header>
     <main>
-      <section>
+      <section class="create-meal" id="createMeal">
         <h1>What are you looking for?</h1>
-        <form>
-          <input type="radio" id="side">Side</input>
-          <input type="radio" id="main-dish">Main Dish</input>
-          <input type="radio" id="dessert">Dessert</input>
-          <input type="radio" id="entire-meal">Entire Meal</input>
+         <form class="container">
+          <div class="wrapper">
+            <input type="radio" class="side" id="side"></input>
+            <label for="side">Side</label>
+          </div>
+          <div class="wrapper">
+            <input type="radio" id="main-dish"></input>
+            <label for="main">Main</label>
+          </div>
+          <div class="wrapper">
+            <input type="radio" id="dessert"></input>
+            <label for="dessert">Dessert</label>
+          </div>
+          <div class="wrapper">
+            <input type="radio" id="entire-meal"></input>
+            <label for="meal">Meal</label>
+          </div>
           <button class="lets-cook">LET'S COOK!</button>
         </form>
       </section>
-      <section>
-        <img class="cookpot" src="assets/cookpot.svg">
+      <section class="pot-recipe" id="potRecipe">
+        <div class="wrapper1">
+          <img class="cookpot" src="assets/cookpot.svg">
+          <p class="recipe-text" id="recipeText">Place Holder
+          </p>
+        </div>
+
       </section>
     </main>
   </body>
