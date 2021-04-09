@@ -14,22 +14,22 @@
         <h2>What are you looking for?<span>*</span></h2>
          <form class="container">
           <div class="wrapper">
-            <input type="radio" class="side" id="side"></input>
+            <input type="radio" class="side" id="side" name="dish" value="sides"></input>
             <label for="side">Side</label>
           </div>
           <div class="wrapper">
-            <input type="radio" class="main-dish"id="mainDish"></input>
+            <input type="radio" class="main-dish"id="mainDish" name="dish" value="radioMainDish"></input>
             <label for="main">Main Dish</label>
           </div>
           <div class="wrapper">
-            <input type="radio" id="dessert"></input>
+            <input type="radio" class="dessert" id="dessert" name="dish" value="desserts"></input>
             <label for="dessert">Dessert</label>
           </div>
           <div class="wrapper">
-            <input type="radio" id="entireMeal"></input>
+            <input type="radio" class="entire-meal" id="entireMeal" name= "dish" value="entireMeal"></input>
             <label for="meal">Entire Meal</label>
           </div>
-          <button class="lets-cook-button">LET'S COOK!</button>
+          <button class="lets-cook-button" id="letsCookButton" value="letsCook">LET'S COOK!</button>
         </form>
       </section>
       <section class="pot-recipe" id="potRecipe">
