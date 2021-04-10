@@ -13,6 +13,7 @@ red - #ee5253
 }
 body {
     background-image: url(assets/burger-friends.jpg);
+    display: cover;
     background-size: 100%;
     margin: 0;
 
@@ -74,6 +75,11 @@ span {
    margin-top: 5vh;
 
  }
+ 
+ .hidden {
+   display: none;
+ }
+
 .container {
   display: flex;
   flex-direction: column;
