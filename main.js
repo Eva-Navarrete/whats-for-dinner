@@ -61,6 +61,9 @@ function getDish(currentDish) {
 
 
 }
+// add a hidden recipe button to HTML then design and style the recipe button
+// target button through dqs.
+// add classList.remove hidden to button withing the getDish function.
 
 
 
