@@ -10,10 +10,12 @@ var potImage = document.querySelector('.cookpot');
 var recipeText = document.querySelector('.recipe-text');
 var wrapper1 = document.querySelector('.wrapper1');
 var recipeDisplayed = document.querySelector('.recipe-displayed');
+var favoriteBtn = document.querySelector('#favoriteButton');
 
 
 // EvenListener
 letsCookBtn.addEventListener('click', displayFood);
+favoriteBtn.addEventListener('click', addToFavorite);
 // containerSection.addEventListener('click', testFunction)
 
 
@@ -31,10 +33,11 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+var currentDish;
+
 function displayFood(event) {
   event.preventDefault();
   // fidure out a way to clear the p tag everytime lets cook button is selected.
-  var currentDish;
  for (var i = 0; i < radioBtns.length; i++) {
    console.log(radioBtns[i]);
     if(radioBtns[i].checked && radioBtns[i].value ==='sides') {
@@ -59,15 +62,26 @@ function getDish(currentDish) {
   potImage.classList.add('hidden');
   recipeText.classList.remove('hidden');
   recipeDisplayed.classList.remove('hidden');
+  favoriteBtn.classList.remove('hidden');
 
   recipeDisplayed.innerText = currentDish;
   // var p = document.createElement('p');
   //
   // p.append(currentDish);
   // wrapper1.append(p);
-
-
 }
+var favoriteDish = [];
+
+function addToFavorite(event) {
+  if(!favoriteDish.includes(currentDish)){
+    favoriteDish.push(currentDish);
+
+  }
+// if !favortieDissh
+
+  console.log('yo', favoriteDish);
+}
+
 // add a hidden recipe button to HTML then design and style the recipe button
 // target button through dqs.
 // add classList.remove hidden to button withing the getDish function.
