@@ -1,5 +1,4 @@
 // QuerySelectors
-
 var containerSection = document.querySelector('.container');
 var letsCookBtn = document.querySelector('#letsCookButton');
 var radioBtns = document.getElementsByName('dish');
@@ -12,31 +11,18 @@ var viewSavedBtn = document.querySelector('#viewFavoriteRecipeButton')
 var savedViewPage = document.querySelector('.saved-view');
 var hideHomeView = document.querySelector('.home-view')
 var savedRecipeSection = document.querySelector('.saved-recipes-section')
-
+var backHomeBtn = document.querySelector('#backHomeButton');
 // EvenListener
 letsCookBtn.addEventListener('click', displayFood);
 favoriteBtn.addEventListener('click', addToFavorite);
-viewSavedBtn.addEventListener('click', displaySavedRecipe)
-
-
-
-
+viewSavedBtn.addEventListener('click', displaySavedRecipe);
+backHomeBtn.addEventListener('click', displayHomePage);
 // Buttons
-
-
-
-
-
-
-
-
 // Functions
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
 var currentDish;
-
 function displayFood(event) {
   event.preventDefault();
   for (var i = 0; i < radioBtns.length; i++) {
@@ -58,13 +44,11 @@ function displayFood(event) {
     }
   }
 }
-
 function getDish(currentDish) {
   potImage.classList.add('hidden');
   recipeText.classList.remove('hidden');
   recipeDisplayed.classList.remove('hidden');
   favoriteBtn.classList.remove('hidden');
-
   recipeDisplayed.innerText = currentDish;
   // var p = document.createElement('p');
   //
@@ -72,30 +56,31 @@ function getDish(currentDish) {
   // wrapper1.append(p);
 }
 var favoriteDish = [];
-
 function addToFavorite(event) {
   if (!favoriteDish.includes(currentDish)) {
     favoriteDish.push(currentDish);
-
   }
-
   console.log('yo', favoriteDish);
 }
-
 function displaySavedRecipe() {
   savedViewPage.classList.remove('hidden');
   hideHomeView.classList.add('hidden');
+  backHomeBtn.classList.remove('hidden');
+  viewSavedBtn.classList.add('hidden');
 for (var i = 0; i < favoriteDish.length; i++) {
-
  savedRecipeSection.innerHTML +=
-
  `<div class="fav-recipe-list">
     <p>${favoriteDish[i]}</p>
-    <button class="remove-favorite" id="removeFavorite">🤮</button>
+    <button class="remove-favorite-button" id="removeFavoriteButton">🤮</button>
   </div>
  `
 }
-
+}
+function displayHomePage(event) {
+  savedViewPage.classList.add('hidden');
+  hideHomeView.classList.remove('hidden');
+  viewSavedBtn.classList.remove('hidden');
+  backHomeBtn.classList.add('hidden');
 }
 
 
