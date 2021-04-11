@@ -46,3 +46,5 @@ var desserts = [
 'Croissants',
 'Eclairs',
 ];
+var currentDish;
+var favoriteDish = [];
