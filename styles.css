@@ -109,8 +109,9 @@ span {
 }
 .saved-view {
   background-color: rgba(225, 225, 225, .9);
-  /* display: flex;
-  justify-content: center; */
+  position: fixed;
+  left: 350px;
+  top: 200px;
   width: 200px;
   height: 200px;
 }
