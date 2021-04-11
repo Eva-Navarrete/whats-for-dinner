@@ -10,7 +10,8 @@ var recipeDisplayed = document.querySelector('.recipe-displayed');
 var favoriteBtn = document.querySelector('#favoriteButton');
 var viewSavedBtn = document.querySelector('#viewFavoriteRecipeButton')
 var savedViewPage = document.querySelector('.saved-view');
-
+var hideHomeView = document.querySelector('.home-view
+var savedRecipeSection = document.querySelector('.saved-recipes-section')
 
 // EvenListener
 letsCookBtn.addEventListener('click', displayFood);
@@ -83,6 +84,9 @@ function addToFavorite(event) {
 
 function displaySavedRecipe() {
   savedViewPage.classList.remove('hidden');
+  hideHomeView.classList.add('hidden');
+
+
 }
 
 
