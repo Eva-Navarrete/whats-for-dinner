@@ -7,39 +7,43 @@
   <body>
     <header>
       <h1>What's for Dinner?</h1>
-      <button class="add-a-recipe-button">ADD A RECIPE</button>
+      <button class="view-favorite-recipe-button" id="viewFavoriteRecipeButton">VIEW ❤️ RECIPE</button>
     </header>
     <main>
-      <section class="create-meal" id="createMeal">
-        <h2>What are you looking for?<span>*</span></h2>
-         <form class="container">
-          <div class="wrapper">
-            <input type="radio" class="side" id="side" name="dish" value="sides"></input>
-            <label for="side">Side</label>
+      <section class="view home-view">
+        <section class="create-meal" id="createMeal">
+          <h2>What are you looking for?<span>*</span></h2>
+           <form class="container">
+            <div class="wrapper">
+              <input type="radio" class="side" id="side" name="dish" value="sides"></input>
+              <label for="side">Side</label>
+            </div>
+            <div class="wrapper">
+              <input type="radio" class="main-dish"id="mainDish" name="dish" value="mainDish"></input>
+              <label for="main">Main Dish</label>
+            </div>
+            <div class="wrapper">
+              <input type="radio" class="dessert" id="dessert" name="dish" value="desserts"></input>
+              <label for="dessert">Dessert</label>
+            </div>
+            <div class="wrapper">
+              <input type="radio" class="entire-meal" id="entireMeal" name= "dish" value="entireMeal"></input>
+              <label for="meal">Entire Meal</label>
+            </div>
+            <button class="lets-cook-button" id="letsCookButton" value="letsCook">LET'S COOK!</button>
+          </form>
+        </section>
+        <section class="pot-recipe" id="potRecipe">
+          <div class="wrapper1">
+            <img class="cookpot" src="assets/cookpot.svg">
+            <p class="recipe-text hidden" id="recipeText"><strong>You should make:</strong></p>
+            <p class="recipe-displayed hidden"><p/>
+            <button class="favorite-button hidden" id="favoriteButton" type="button">🤍</button>
           </div>
-          <div class="wrapper">
-            <input type="radio" class="main-dish"id="mainDish" name="dish" value="mainDish"></input>
-            <label for="main">Main Dish</label>
-          </div>
-          <div class="wrapper">
-            <input type="radio" class="dessert" id="dessert" name="dish" value="desserts"></input>
-            <label for="dessert">Dessert</label>
-          </div>
-          <div class="wrapper">
-            <input type="radio" class="entire-meal" id="entireMeal" name= "dish" value="entireMeal"></input>
-            <label for="meal">Entire Meal</label>
-          </div>
-          <button class="lets-cook-button" id="letsCookButton" value="letsCook">LET'S COOK!</button>
-        </form>
+        </section>
       </section>
-      <section class="pot-recipe" id="potRecipe">
-        <div class="wrapper1">
-          <img class="cookpot" src="assets/cookpot.svg">
-          <p class="recipe-text hidden" id="recipeText">You should make:</p>
-          <p class="recipe-displayed hidden"><p/>
-          <button class="favorite-button hidden" id="favoriteButton" type="button">🤍</button>
-        </div>
-
+      <section class="saved-view hidden">
+        <section class="saved-recipes-section"></section>
       </section>
     </main>
   </body>

@@ -1,8 +1,5 @@
 // QuerySelectors
-// var radioSide = document.querySelector('#side');
-// var radioMainDish = document.querySelector('#mainDish');
-// var radioDessert = document.querySelector('#dessert');
-// var radioEntireMeal = document.querySelector('#entireMeal');
+
 var containerSection = document.querySelector('.container');
 var letsCookBtn = document.querySelector('#letsCookButton');
 var radioBtns = document.getElementsByName('dish');
@@ -11,12 +8,17 @@ var recipeText = document.querySelector('.recipe-text');
 var wrapper1 = document.querySelector('.wrapper1');
 var recipeDisplayed = document.querySelector('.recipe-displayed');
 var favoriteBtn = document.querySelector('#favoriteButton');
-
+var viewSavedBtn = document.querySelector('#viewFavoriteRecipeButton')
+var savedViewPage = document.querySelector('.saved-view');
+var hideHomeView = document.querySelector('.home-view')
+var savedRecipeSection = document.querySelector('.saved-recipes-section')
 
 // EvenListener
 letsCookBtn.addEventListener('click', displayFood);
 favoriteBtn.addEventListener('click', addToFavorite);
-// containerSection.addEventListener('click', testFunction)
+viewSavedBtn.addEventListener('click', displaySavedRecipe)
+
+
 
 
 // Buttons
@@ -37,25 +39,24 @@ var currentDish;
 
 function displayFood(event) {
   event.preventDefault();
-  // fidure out a way to clear the p tag everytime lets cook button is selected.
- for (var i = 0; i < radioBtns.length; i++) {
-   console.log(radioBtns[i]);
-    if(radioBtns[i].checked && radioBtns[i].value ==='sides') {
+  for (var i = 0; i < radioBtns.length; i++) {
+    console.log(radioBtns[i]);
+    if (radioBtns[i].checked && radioBtns[i].value === 'sides') {
       currentDish = sides[getRandomIndex(sides)];
-       console.log(currentDish);
-       getDish(currentDish);
-       break;
-    } else if (radioBtns[i].checked && radioBtns[i].value === 'mainDish'){
+      console.log(currentDish);
+      getDish(currentDish);
+      break;
+    } else if (radioBtns[i].checked && radioBtns[i].value === 'mainDish') {
       currentDish = mains[getRandomIndex(mains)];
       getDish(currentDish);
       break;
-    } else if (radioBtns[i].checked && radioBtns[i].value === 'desserts'){
+    } else if (radioBtns[i].checked && radioBtns[i].value === 'desserts') {
       currentDish = desserts[getRandomIndex(desserts)];
       getDish(currentDish);
       console.log(currentDish);
       break;
     }
- }
+  }
 }
 
 function getDish(currentDish) {
@@ -73,18 +74,30 @@ function getDish(currentDish) {
 var favoriteDish = [];
 
 function addToFavorite(event) {
-  if(!favoriteDish.includes(currentDish)){
+  if (!favoriteDish.includes(currentDish)) {
     favoriteDish.push(currentDish);
 
   }
-// if !favortieDissh
 
   console.log('yo', favoriteDish);
 }
 
-// add a hidden recipe button to HTML then design and style the recipe button
-// target button through dqs.
-// add classList.remove hidden to button withing the getDish function.
+function displaySavedRecipe() {
+  savedViewPage.classList.remove('hidden');
+  hideHomeView.classList.add('hidden');
+for (var i = 0; i < favoriteDish.length; i++) {
+
+ savedRecipeSection.innerHTML +=
+
+ `<div class="fav-recipe-list">
+    <p>${favoriteDish[i]}</p>
+    <button class="remove-favorite" id="removeFavorite">🤮</button>
+  </div>
+ `
+}
+
+}
+
 
 
 
@@ -118,9 +131,9 @@ function addToFavorite(event) {
 //   event.preventDefault();
 
 
-  // var sideDishes = sides[getRandomIndex(array)];
-  // var mainDishes = mains[getRandomIndex(array)];
-  // var dessertDishes = desserts[getRandomIndex(array)];
+// var sideDishes = sides[getRandomIndex(array)];
+// var mainDishes = mains[getRandomIndex(array)];
+// var dessertDishes = desserts[getRandomIndex(array)];
 //   console.log(event);
 // }
 // Create a random function which takes in all of the food arrays
