@@ -85,6 +85,7 @@ function displaySavedRecipe() {
   hideHomeView.classList.add('hidden');
   backHomeBtn.classList.remove('hidden');
   viewSavedBtn.classList.add('hidden');
+  removeFavoriteBtn.classList.remove('hidden')
 for (var i = 0; i < favoriteDish.length; i++) {
  savedRecipeSection.innerHTML +=
  `<div class="fav-recipe-list" id="recipeList">
@@ -109,14 +110,16 @@ function displayHomePage() {
 var favRecipRadioBtn = document.getElementsByName('dish1');
 
 function removeFavoriteDish() {
-  console.log('shit');
-// for (var i = 0; i < favRecipRadioBtn.length; i++) {
-//   if (favRecipRadioBtn[i].checked && favRecipRadioBtn.value === favoriteDish){
-//     favoriteDish.splice(i,i);
-//     console.log("YOLOOOOOO");
-//   }
+  // console.log('shit');
+for (var i = 0; i < favoriteDish.length; i++) {
+  if (favRecipRadioBtn[i].checked){
+    // favRecipRadioBtn[i].value === favoriteDish
+    document.getElementById('recipeList').remove();
+    favoriteDish.splice(i,1);
+    console.log("YOLOOOOOO");
+  }
 }
-
+}
   // for (var i = 0; i < favoriteDish.length; i++) {
   //   favoriteDish.splice(i,1);
 

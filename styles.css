@@ -114,6 +114,12 @@ span {
   width: 200px;
   height: 200px;
 }
+.savedRecipeSection {
+  display: flex;
+  justify-content: center;
+
+}
+
 .back-home-button {
   background-color: #EFEFEF;
   border: transparent;
