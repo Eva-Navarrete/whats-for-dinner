@@ -11,11 +11,15 @@ var recipeText = document.querySelector('.recipe-text');
 var wrapper1 = document.querySelector('.wrapper1');
 var recipeDisplayed = document.querySelector('.recipe-displayed');
 var favoriteBtn = document.querySelector('#favoriteButton');
+var viewSavedBtn = document.querySelector('#viewFavoriteRecipeButton')
+var savedViewPage = document.querySelector('.saved-view');
 
 
 // EvenListener
 letsCookBtn.addEventListener('click', displayFood);
 favoriteBtn.addEventListener('click', addToFavorite);
+viewSavedBtn.addEventListener('click', displaySavedRecipe)
+
 // containerSection.addEventListener('click', testFunction)
 
 
@@ -77,9 +81,12 @@ function addToFavorite(event) {
     favoriteDish.push(currentDish);
 
   }
-// if !favortieDissh
 
   console.log('yo', favoriteDish);
+}
+
+function displaySavedRecipe()  {
+  savedViewPage.classList.remove('hidden');
 }
 
 // add a hidden recipe button to HTML then design and style the recipe button
