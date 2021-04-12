@@ -23,7 +23,7 @@ Webpage that users can interact with and favorite ***What's For Dinner?*** dishe
 
 ******************************************************************
 Github Pages Link:
-![](file:///Users/turingschoolloaner13/Turing/mod-1/projects/whats-for-dinner/index.html?dish=mainDish)
+![What's For Dinner?](https://eva-navarrete.github.io/whats-for-dinner/)
 
 #### Contributors:
 
